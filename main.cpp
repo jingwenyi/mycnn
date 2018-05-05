@@ -135,13 +135,13 @@ void test_cnn()
 int main()
 {
 	LabelArr trainLabel=read_Lable("./train-labels.idx1-ubyte");
-	printf("22222\r\n");
+
 	ImgArr trainImg=read_Img("./train-images.idx3-ubyte");
-	printf("33333\r\n");
+
 	LabelArr testLabel=read_Lable("./t10k-labels.idx1-ubyte");
-	printf("4444\r\n");
+
 	ImgArr testImg=read_Img("./t10k-images.idx3-ubyte");
-	printf("111111111\r\n");
+
 	nSize inputSize={testImg->ImgPtr[0].c,testImg->ImgPtr[0].r};
 	int outSize=testLabel->LabelPtr[0].l;
 
@@ -160,7 +160,7 @@ int main()
 	savecnn(cnn,"minst.cnn");
 	// ±£´æÑµÁ·Îó²î
 	FILE  *fp=NULL;
-	fp=fopen("E:\\Code\\Matlab\\PicTrans\\cnnL.ma","wb");
+	fp=fopen("cnnL.ma","wb");
 	if(fp==NULL)
 		printf("write file failed\n");
 	fwrite(cnn->L,sizeof(float),trainNum,fp);
